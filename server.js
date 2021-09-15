@@ -38,8 +38,8 @@ app.post('/posts/comments', (req, res) => {
   console.log(blogPostDB)
   stringblogPostDB = JSON.stringify(blogPostDB)
   fs.writeFile('posts.json', stringblogPostDB, () => console.log('it worked'))
-  //res.send(stringblogPostDB)
-  res.send('its working')
+  res.send(stringblogPostDB)
+  //res.send('its working')
 })
 
 
