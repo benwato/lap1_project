@@ -12,6 +12,7 @@ We made this in timed conditions in just under one week.
 
 ### Usage
 Our site is hosted at: https://blog-project-bmk.netlify.app/
+
 Our API is hosted at: https://blog-project-fp.herokuapp.com/
 
 To use the app, visit the page linked above. To add a post, use the form at the top of the page to input your post and add a gif too. Once you click submit, your psot should appear as a card below. You can also comment or react to other peoples posts.
