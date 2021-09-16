@@ -21,7 +21,7 @@
 
   <body>
      
-
+ 
       
     <!-- Navbar -->
     <header>
@@ -78,35 +78,43 @@
   </header>
   <!-- Navbar -->
 
+
+  <!-- SUBMISSION AREA -->
+  <div class="container">
     <form id="form" action="http://localhost:3000/posts" method="POST" class="w-50 mx-auto mb-4">
       <div class="mb-3" id="inputFields">
-        <label for="newpost" class="form-label">Make a new post</label><br>
+        <label for="newpost" class="form-label display-6 lead">Make a new post</label><br>
         <input
           type="text"
           placeholder="Title"
-          class="form-control"
+          class="form-control form-rounded mb-2"
           id="newtitle"
         />
         <textarea
           placeholder="Write your own..."
-          class="form-control"
+          class="form-control form-rounded mb-2"
           id="newpost"
         ></textarea>
         <div id='my-textarea-remaining-chars'>250 Characters Remaining</div>
       </div>
       <div id=gifs>
         <label for="searchgif">Search for a gif</label>
-        <input type="text" name="searchgif" id="gifinput">
+        <input type="text" name="searchgif" id="gifinput" class="form-rounded mb-2">
         <button id="gifsearch" class= 'btn btn-secondary'>Search</button>
       </div>
         <br>
       <button type="submit" class="btn btn-primary" id="submit_btn">Submit</button>
     </form>
+  </div>
 
+
+
+  <!-- CARDS AREA -->
     <div class="container">
       <div class="row justify-content-center" id="justcent">
       </div>
     </div>
+   
     
     <!-- Footer -->
 <footer class="bg-dark text-center text-white">

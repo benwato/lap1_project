@@ -58,77 +58,76 @@ function callAPI(e) {
 
 function storedPosts(resp) { //resp is the array of objects
 
-    // console.log(resp)
-    for (let i = 0; i <= resp.length - 1; i++) {
-        // Create the new posts
-        let justcent = document.getElementById('justcent')
-        let col_div = document.createElement('div')
-        justcent.prepend(col_div)
-        col_div.setAttribute("class", "col col-12 col-lg-6 col-xl-4 mb-3")
-        let card_div = document.createElement('div')
-        card_div.setAttribute("class", "card zoom border-3 border-dark rounded-right shadow-lg mb-5 bg-white rounded")
-        col_div.appendChild(card_div)
-        let image = document.createElement('img')
-        image.setAttribute("class", "card-img-top")
-        image.setAttribute("src", `${resp[i].gif}`)
-        card_div.appendChild(image)
-        let card_body = document.createElement('div')
-        card_body.setAttribute("class", "card-body")
-        card_body.setAttribute('id', `card-body-${i}`)
-        card_div.appendChild(card_body)
-        let h5 = document.createElement('h5')
-        let h6 = document.createElement('h6')
-        h6.setAttribute("class", "card-subtitle text-muted mb-2")
-        h5.setAttribute("class", "card-title mb-2")
-        h5.id = `cardtitle${i}`
-        h6.id = `cardsubtitle${i}`
-        card_body.appendChild(h5)
-        card_body.appendChild(h6)
-        let cardtext = document.createElement('div')
-        cardtext.id = `cardtext${i}`
-        card_body.appendChild(cardtext)
-        let buttongroup = document.createElement('div')
-        buttongroup.setAttribute("class", "btn-group w-100")
-        card_body.appendChild(buttongroup)
-        let butt1 = document.createElement('a')
-        let butt2 = document.createElement('a')
-        let butt3 = document.createElement('a')
-        let butt4 = document.createElement('a')
-        butt1.setAttribute("class", "btn btn-light mt-2 btn-block emoji1")
-        butt2.setAttribute("class", "btn btn-light mt-2 btn-block emoji2")
-        butt3.setAttribute("class", "btn btn-light mt-2 btn-block emoji3")
-        butt4.setAttribute("class", "btn btn-success mt-2")
-        buttongroup.appendChild(butt1)
-        buttongroup.appendChild(butt2)
-        buttongroup.appendChild(butt3)
-        buttongroup.appendChild(butt4)
-        const emojicount1 = resp[i].interactions[0]
-        const emojicount2 = resp[i].interactions[1]
-        const emojicount3 = resp[i].interactions[2]
-        butt1.textContent = `❤️ ${emojicount1}`
-        butt2.textContent = `😂 ${emojicount2}`
-        butt3.textContent = `😲 ${emojicount3}`
-        butt4.textContent = "Comment"
-        document.getElementById(`cardtitle${i}`).innerText = `${resp[i].title}`
-        document.getElementById(`cardsubtitle${i}`).innerText = `${resp[i].date}`
-        document.getElementById(`cardtext${i}`).innerText = resp[i].newpost
-        let allCommentContent = document.createElement('div')
-        allCommentContent.setAttribute('class', 'mx-3 mb-3')
-        card_div.appendChild(allCommentContent)
-        let commentTitle = document.createElement('h5')
-        commentTitle.setAttribute('class', 'm-2')
-        allCommentContent.appendChild(commentTitle)
-        commentTitle.innerText = 'All comments'
-        let commentList = document.createElement('ul')
-        commentList.setAttribute('class', 'list-unstyled')
-        allCommentContent.appendChild(commentList)
-        for (let j = 0; j < resp[i].comments.length; j++) {
-            let newLi = document.createElement('li')
-            commentList.appendChild(newLi)
-            newLi.innerText = resp[i].comments[j]
-            newLi.setAttribute('class', 'bg-light m-2 px-2')
-        }
+for (let i = 0; i <= resp.length - 1; i++) {
+    // Create the new posts
+    let justcent = document.getElementById('justcent')
+    let col_div = document.createElement('div')
+    justcent.prepend(col_div)
+    col_div.setAttribute("class", "col col-12 col-lg-6 col-xl-4")
+    let card_div = document.createElement('div')
+    card_div.setAttribute("class", "card zoom border-3 border-dark rounded-right shadow-lg mb-5 bg-white rounded")
+    col_div.appendChild(card_div)
+    let image = document.createElement('img')
+    image.setAttribute("class", "card-img-top")
+    image.setAttribute("src", `${resp[i].gif}`)
+    card_div.appendChild(image)
+    let card_body = document.createElement('div')
+    card_body.setAttribute("class", "card-body")
+    card_body.setAttribute('id', `card-body-${i}`)
+    card_div.appendChild(card_body)
+    let h5 = document.createElement('h5')
+    let h6 = document.createElement('h6')
+    h6.setAttribute("class", "card-subtitle text-muted mb-2")
+    h5.setAttribute("class", "card-title mb-2")
+    h5.id = `cardtitle${i}`
+    h6.id = `cardsubtitle${i}`
+    card_body.appendChild(h5)
+    card_body.appendChild(h6)
+    let cardtext = document.createElement('div')
+    cardtext.id = `cardtext${i}`
+    card_body.appendChild(cardtext)
+    let buttongroup = document.createElement('div')
+    buttongroup.setAttribute("class", "btn-group w-100")
+    card_body.appendChild(buttongroup)
+    let butt1 = document.createElement('a')
+    let butt2 = document.createElement('a')
+    let butt3 = document.createElement('a')
+    let butt4 = document.createElement('a')
+    butt1.setAttribute("class", "btn btn-light mt-2 btn-block emoji1")
+    butt2.setAttribute("class", "btn btn-light mt-2 btn-block emoji2")
+    butt3.setAttribute("class", "btn btn-light mt-2 btn-block emoji3")
+    butt4.setAttribute("class", "btn btn-success mt-2")
+    buttongroup.appendChild(butt1)
+    buttongroup.appendChild(butt2)
+    buttongroup.appendChild(butt3)
+    buttongroup.appendChild(butt4)
+    const emojicount1 = resp[i].interactions[0]
+    const emojicount2 = resp[i].interactions[1]
+    const emojicount3 = resp[i].interactions[2]
+    butt1.textContent = `❤️ ${emojicount1}`
+    butt2.textContent = `😂 ${emojicount2}`
+    butt3.textContent = `😲 ${emojicount3}`
+    butt4.textContent = "Comment"
+    document.getElementById(`cardtitle${i}`).innerText = `${resp[i].title}`
+    document.getElementById(`cardsubtitle${i}`).innerText = `${resp[i].date}`
+    document.getElementById(`cardtext${i}`).innerText = resp[i].newpost
+    let allCommentContent = document.createElement('div')
+    allCommentContent.setAttribute('class', 'mx-3 mb-3')
+    card_div.appendChild(allCommentContent)
+    let commentTitle = document.createElement('h5')
+    commentTitle.setAttribute('class', 'm-2')
+    allCommentContent.appendChild(commentTitle)
+    commentTitle.innerText = 'All comments'
+    let commentList = document.createElement('ul')
+    commentList.setAttribute('class', 'list-unstyled')
+    allCommentContent.appendChild(commentList)
+    for (let j = 0; j < resp[i].comments.length; j++) {
+        let newLi = document.createElement('li')
+        commentList.appendChild(newLi)
+        newLi.innerText = resp[i].comments[j]
+        newLi.setAttribute('class', 'bg-light m-2 px-2')
     }
+}
 
 
 
@@ -184,7 +183,6 @@ function storedPosts(resp) { //resp is the array of objects
                             },
                             body: JSON.stringify(addingComment)
                         }
-                        console.log(addingComment.comment)
                         fetch('http://localhost:3000/posts/comments', options)
                     }
                 }
@@ -197,16 +195,12 @@ function storedPosts(resp) { //resp is the array of objects
     const emojiButton1 = document.getElementsByClassName('emoji1')
     const emojiButton2 = document.getElementsByClassName('emoji2')
     const emojiButton3 = document.getElementsByClassName('emoji3')
-    console.log(emojiButton1)
-    console.log(emojiButton2)
-    console.log(emojiButton3)
 
     for (let i = 0; i < emojiButton1.length; i++) {
         emojiButton1[i].addEventListener('click', increment1)
 
         function increment1(e) {
             e.preventDefault()
-            console.log(e.path[2].id.slice(10))
             let emojiid = (e.path[2].id).slice(10)
             let count1 = { id: emojiid, emojicontent: emojiButton1[i].textContent }
             // console.log(count1)
@@ -225,7 +219,6 @@ function storedPosts(resp) { //resp is the array of objects
                 .then(resp => changeUI(resp))
 
             function changeUI(resp) {
-                console.log(emojiButton1[i].textContent)
                 emojiButton1[i].textContent = `❤️ ${resp}`
             }
 
@@ -237,7 +230,6 @@ function storedPosts(resp) { //resp is the array of objects
 
         function increment1(e) {
             e.preventDefault()
-            console.log(e.path[2].id.slice(10))
             let emojiid = (e.path[2].id).slice(10)
             let count2 = { id: emojiid, emojicontent: emojiButton2[i].textContent }
             // console.log(count1)
@@ -256,7 +248,6 @@ function storedPosts(resp) { //resp is the array of objects
                 .then(resp => changeUI(resp))
 
             function changeUI(resp) {
-                console.log(emojiButton2[i].textContent)
                 emojiButton2[i].textContent = `😂 ${resp}`
             }
 
@@ -268,7 +259,6 @@ function storedPosts(resp) { //resp is the array of objects
 
         function increment1(e) {
             e.preventDefault()
-            console.log(e.path[2].id.slice(10))
             let emojiid = (e.path[2].id).slice(10)
             let count3 = { id: emojiid, emojicontent: emojiButton3[i].textContent }
             // console.log(count1)
@@ -287,7 +277,6 @@ function storedPosts(resp) { //resp is the array of objects
                 .then(resp => changeUI(resp))
 
             function changeUI(resp) {
-                console.log(emojiButton3[i].textContent)
                 emojiButton3[i].textContent = `😲 ${resp}`
             }
 
@@ -369,3 +358,76 @@ function characterCheck() {
 myTextArea.addEventListener('input', characterCheck)
 
 
+// for (let i = 0; i <= resp.length - 1; i++) {
+//     // Create the new posts
+//     let justcent = document.getElementById('justcent')
+//     let col_div = document.createElement('div')
+//     justcent.prepend(col_div)
+//     col_div.setAttribute("class", "col col-12 col-lg-6 col-xl-4")
+//     let card_div = document.createElement('div')
+//     let masonry = document.createElement('div')
+//     masonry.appendChild(card_div)
+//     masonry.setAttribute('class','card-columns')
+//     card_div.setAttribute("class", "card zoom border-3 border-dark rounded-right shadow-lg mb-5 bg-white rounded")
+//     col_div.appendChild(card_div)
+//     let image = document.createElement('img')
+//     image.setAttribute("class", "card-img-top")
+//     image.setAttribute("src", `${resp[i].gif}`)
+//     card_div.appendChild(image)
+//     let card_body = document.createElement('div')
+//     card_body.setAttribute("class", "card-body")
+//     card_body.setAttribute('id', `card-body-${i}`)
+//     card_div.appendChild(card_body)
+//     let h5 = document.createElement('h5')
+//     let h6 = document.createElement('h6')
+//     h6.setAttribute("class", "card-subtitle text-muted mb-2")
+//     h5.setAttribute("class", "card-title mb-2")
+//     h5.id = `cardtitle${i}`
+//     h6.id = `cardsubtitle${i}`
+//     card_body.appendChild(h5)
+//     card_body.appendChild(h6)
+//     let cardtext = document.createElement('div')
+//     cardtext.id = `cardtext${i}`
+//     card_body.appendChild(cardtext)
+//     let buttongroup = document.createElement('div')
+//     buttongroup.setAttribute("class", "btn-group w-100")
+//     card_body.appendChild(buttongroup)
+//     let butt1 = document.createElement('a')
+//     let butt2 = document.createElement('a')
+//     let butt3 = document.createElement('a')
+//     let butt4 = document.createElement('a')
+//     butt1.setAttribute("class", "btn btn-light mt-2 btn-block emoji1")
+//     butt2.setAttribute("class", "btn btn-light mt-2 btn-block emoji2")
+//     butt3.setAttribute("class", "btn btn-light mt-2 btn-block emoji3")
+//     butt4.setAttribute("class", "btn btn-success mt-2")
+//     buttongroup.appendChild(butt1)
+//     buttongroup.appendChild(butt2)
+//     buttongroup.appendChild(butt3)
+//     buttongroup.appendChild(butt4)
+//     const emojicount1 = resp[i].interactions[0]
+//     const emojicount2 = resp[i].interactions[1]
+//     const emojicount3 = resp[i].interactions[2]
+//     butt1.textContent = `❤️ ${emojicount1}`
+//     butt2.textContent = `😂 ${emojicount2}`
+//     butt3.textContent = `😲 ${emojicount3}`
+//     butt4.textContent = "Comment"
+//     document.getElementById(`cardtitle${i}`).innerText = `${resp[i].title}`
+//     document.getElementById(`cardsubtitle${i}`).innerText = `${resp[i].date}`
+//     document.getElementById(`cardtext${i}`).innerText = resp[i].newpost
+//     let allCommentContent = document.createElement('div')
+//     allCommentContent.setAttribute('class', 'mx-3 mb-3')
+//     card_div.appendChild(allCommentContent)
+//     let commentTitle = document.createElement('h5')
+//     commentTitle.setAttribute('class', 'm-2')
+//     allCommentContent.appendChild(commentTitle)
+//     commentTitle.innerText = 'All comments'
+//     let commentList = document.createElement('ul')
+//     commentList.setAttribute('class', 'list-unstyled')
+//     allCommentContent.appendChild(commentList)
+//     for (let j = 0; j < resp[i].comments.length; j++) {
+//         let newLi = document.createElement('li')
+//         commentList.appendChild(newLi)
+//         newLi.innerText = resp[i].comments[j]
+//         newLi.setAttribute('class', 'bg-light m-2 px-2')
+//     }
+// }

@@ -43,3 +43,10 @@ body::after {
         
         transform: scale(1.05); 
       }
+
+      .form-rounded {
+          border-radius: 1rem;
+          border: 2px groove black
+      }
+
+   
