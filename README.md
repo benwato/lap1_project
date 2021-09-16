@@ -21,7 +21,9 @@ To use the app, visit the page linked above. To add a post, use the form at the 
 Share was created with the following technologies.
 
 #### Frontend
-- HTML CSS JavaScript
+- HTML
+- CSS
+- JavaScript
   
 #### Backend
 - NodeJS
