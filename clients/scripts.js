@@ -127,6 +127,7 @@ for (let i = 0; i <= resp.length - 1; i++) {
         newLi.innerText = resp[i].comments[j]
         newLi.setAttribute('class', 'bg-light m-2 px-2')
     }
+
 }
 
 
@@ -166,11 +167,12 @@ for (let i = 0; i <= resp.length - 1; i++) {
                     e.preventDefault()
                     let commentIndex = (e.path[2].id).slice(10)
                     let fullComment = e.path[1][0].value
-                    fetch('http://localhost:3000/posts')
-                        .then(resp => resp.json())
-                        // .then(resp => resp.length)
-                        .then(resp => idFunction(resp))
-                    // .then(resp => console.log(resp))
+                    idFunction()
+                    // fetch('http://localhost:3000/posts')
+                    //     .then(resp => resp.json())
+                    //     // .then(resp => resp.length)
+                    //     .then(resp => idFunction(resp))
+                    // // .then(resp => console.log(resp))
                     function idFunction() {
                         const addingComment = {
                             identifier: commentIndex,
@@ -283,12 +285,8 @@ for (let i = 0; i <= resp.length - 1; i++) {
         }
     }
 
-
-
-
-
-
 }
+
 
 
 let APIKEY = "axJL2HvXKpt1neBIZwHPkMNAJXKXMpRm";
@@ -311,7 +309,7 @@ function getGiff(e) {
     function gifCreate(content) {
         
 
-        if (typeof (fig) === 'undefined') {
+        if (typeof fig === 'undefined') {
             console.log('first time')
             fig = document.createElement("figure");
             let img = document.createElement("img");
